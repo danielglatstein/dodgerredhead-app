@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dodgerredhead</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<header>
+		<h1 id="logo"> Danny G </h1>
+		<nav id="nav_bar">
+			<ul>
+				<li><%= link_to 'Salsa', salsa_path %></li>
+				<li><%= link_to 'Zara Aina', zara_aina_path %></li>
+				<li><%= link_to 'Artwork', artwork_path %></li>
+			</ul>
+		</nav>
+			<div id="social">
+				<a class="twit" target="_blank" href="#" title="twitter"> </a>
+				<a class="insta" target="_blank" href="#" title="instagram"> </a>
+				<a class="plus" target="_blank" href="#" title="google_plus"> </a>
+				<a class="facebook" target="_blank" href="#" title="facebook"> </a>
+			</div>
+</header>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
