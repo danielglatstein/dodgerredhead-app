@@ -1,0 +1,6 @@
+<% @salsa_posts.each do |salsa| %>
+	<div>
+		<div><%= image_tag image.image_url.to_s %></div>
+		<h2> <%= link_to salsa.title, salsa %> </h2>
+	</div>
+<% end %>

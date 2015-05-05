@@ -1,0 +1,17 @@
+<% @video.each do |video| %>
+	<div>
+		<h2> <%= link_to video.title, video %> </h2>
+	</div>
+<% end %>
+
+<% @photography.each do |photo| %>
+	<div>
+		<h2> <%= link_to photo.title, photo %> </h2>
+	</div>
+<% end %>
+
+<% @painting.each do |painting| %>
+	<div>
+		<h2> <%= link_to painting.title, painting %> </h2>
+	</div>
+<% end %>

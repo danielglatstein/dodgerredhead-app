@@ -27,6 +27,8 @@ gem 'devise', '~> 3.4.1'
 
 gem 'activeadmin', '~> 1.0.0.pre1'
 
+gem "carrierwave"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
