@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/zara_aina', to: 'pages#zara_aina'
 
   get '/artwork', to: 'pages#artwork'
+  
 end

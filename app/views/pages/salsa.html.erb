@@ -1,6 +1,35 @@
-<% @salsa_posts.each do |salsa| %>
-	<div>
-		<div><%= image_tag image.image_url.to_s %></div>
-		<h2> <%= link_to salsa.title, salsa %> </h2>
-	</div>
-<% end %>
+<% content_for :salsa do %>
+  <%= stylesheet_link_tag 'salsastyle' %>
+	<section class="single-element">
+
+			<header>
+				<h2 class="sec_name">Salsas</h2>
+				<h3 class="sec_desc">THIS IS AN INTRO TO DANNYS WORK IN VIDEO</h3>
+			</header>
+
+			<div class="clearall"></div>
+
+			<article class="artwork clearfix">
+				<ul class='salsa'>
+
+					<% @salsa_posts.each do |salsa| %>
+
+
+						<a href="verde.html" target="_blank">
+							<li>
+								<div class='img'>
+									<%= image_tag salsa.image_url(:thumb) if salsa.image? %> 
+									<div class='triangle'></div>
+								</div>
+								<h4> <%= link_to salsa.title, salsa %> </h4>
+							</li>
+						</a>
+
+					<% end %>
+
+				</ul>
+			</article>
+
+	</section>
+
+  <% end %>

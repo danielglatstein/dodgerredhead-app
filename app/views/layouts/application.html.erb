@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
+<header id="app_head">
 		<h1 id="logo"> Danny G </h1>
 		<nav id="nav_bar">
 			<ul>
@@ -24,7 +24,10 @@
 </header>
 <body>
 
-<%= yield %>
+<%= yield :salsa %>
+<%= yield :zara %>
+<%= yield :artwork %>
+
 
 </body>
 </html>

@@ -7,15 +7,15 @@ ActiveAdmin.register Post do
   end
   permit_params :title, :body, :category, :image
   form do |f|
-  	f.inputs "dodgerredhead posts" do
-	  	f.label :title 
-		f.text_field :title 
-		f.label :body 
-		f.text_area :body
-	  	f.input :category, :as => :select, :collection => Post::VALID_CATEGORIES
+  	f.inputs "dodgerredhead posts", :multipart => true do
+  	  f.label :title 
+  		f.text_field :title 
+  		f.label :body 
+  		f.text_area :body
+    	f.input :category, :as => :select, :collection => Post::VALID_CATEGORIES
       f.label :image 
       f.file_field :image
-	  	f.submit 
+    	f.submit 
   	end
   end
 end

@@ -1,0 +1,157 @@
+/* web fonts */
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+/* This is a comment. 
+Let's learn some CSS! */
+
+/* CSS Syntax:
+
+selector {
+	property: value;
+	property: value;
+}
+
+*/
+
+/* Type Selector */
+body {
+	background-color: #007A29
+}
+
+article {
+	display: block; 
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearall {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+h4 {
+	font-size: 17px;
+	line-height: 18px;
+	text-transform: uppercase;
+	color: #f1f1f6;
+	opacity: .3
+}
+
+
+
+#social {
+	float: right;
+	display: block;
+	height: 48px;
+	z-index: 1;
+	background-repeat: none;
+	margin: -10px 30px 0 0;
+
+
+}
+
+a.twit, a.insta, a.facebook, a.plus {
+	float: right; 
+	white-space: nowrap;
+	width: 48px;
+	height: 48px;
+	margin:5px; 
+	overflow: hidden; 
+	background-image: url(../images/media.png);
+	margin-right: auto;
+}
+
+
+.sec_name {
+	font-size: 100px;
+	line-height: 120px;
+	margin: 90px 0 50px 0;
+	text-align: center;
+	color: #f1f1f6;
+	text-transform: uppercase;
+	font-family: brandon-black,Helvetica,Arial,sans-serif;
+}
+
+.sec_desc {
+	padding: 0 12.5%;
+	margin: 0 0 30px 0;
+	color: #fff;
+	font-size: 20px;
+	font-family: Courier;
+	text-transform: none;
+	text-align: center;
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
+a.facebook {background-position: -53px 0px;}
+a.facebook:hover {background-position: 0px 0px}
+a.facebook:active {background-position: -53px 0px;}
+
+a.twit {background-position: -371px 0px}
+a.twit:hover {background-position: -318px 0px}
+a.twit:active {background-position: -371px 0px}
+
+a.plus {background-position: -106px 0px}
+a.plus:hover {background-position: -265px 0px}
+a.plus:active {background-position: -106px 0px}
+
+a.insta {background-position: -212px 0px; }
+a.insta:hover {background-position: -159px 0px}
+a.insta:active {background-position: -212px 0px}
+
+.artwork ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.artwork li {
+	max-width: 33.33%;
+	float: left;
+}
+
+.artwork img {
+	max-width: 100%;
+}
+
+.artwork .img {
+	position: relative;
+}
+
+.artwork .triangle {
+	border: 20px solid transparent;
+	border-bottom-color: #007A29;
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 0;
+	left: 10%;
+}
+
+
+.artwork li:hover h4 {
+	opacity:1;
+	transition: opacity .2s ease-out;
+	-moz-transition: opacity .2s ease-out;
+	-webkit-transition: opacity .2s ease-out;
+	-o-transition: opacity .2s ease-out;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+

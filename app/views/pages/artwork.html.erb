@@ -1,3 +1,6 @@
+<% content_for :artwork do %>
+  <%= stylesheet_link_tag 'artworkstyle' %>
+
 <% @video.each do |video| %>
 	<div>
 		<h2> <%= link_to video.title, video %> </h2>
@@ -14,4 +17,5 @@
 	<div>
 		<h2> <%= link_to painting.title, painting %> </h2>
 	</div>
+<% end %>
 <% end %>
