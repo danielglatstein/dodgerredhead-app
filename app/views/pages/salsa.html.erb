@@ -14,11 +14,10 @@
 
 					<% @salsa_posts.each do |salsa| %>
 
-
 						<a href="verde.html" target="_blank">
 							<li>
 								<div class='img'>
-									<%= image_tag salsa.image_url(:thumb) if salsa.image? %> 
+									<%= image_tag salsa.image_url.to_s %>
 									<div class='triangle'></div>
 								</div>
 								<h4> <%= link_to salsa.title, salsa %> </h4>
