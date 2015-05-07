@@ -6,8 +6,8 @@ ActiveAdmin.register Post do
     actions
   end
   permit_params :title, :body, :category, :image
-  form multipart: true do |f|
-  	f.inputs "dodgerredhead posts", :multipart => true do
+  form :html => {multipart: true} do |f|
+  	f.inputs "dodgerredhead posts" do
   	  f.label :title 
   		f.text_field :title 
   		f.label :body 
