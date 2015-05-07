@@ -4,12 +4,12 @@ class PagesController < ApplicationController
 	end
 
 	def salsa
-		@salsa_posts = Post.where(category: "salsa")
+		@salsa_posts = Post.where(category: "Salsa")
 	end
 	 
 	def zara_aina
-		@morandava = Post.where(category: "salsa")
-		@trip_2014 = Post.where(category: "2014 Trip")
+		@morandava = Post.where(category: "Morandava")
+		@trip = Post.where(category: "2014 Trip")
 		@andavabatu = Post.where(category: "Andavabatu")
 		@ranamofana = Post.where(category: "Ranamofana")
 		@crocodiles = Post.where(category: "Crocodiles for Husbands")
