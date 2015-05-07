@@ -1,0 +1,44 @@
+.col1{
+	float: left;
+	width: 50%;
+	margin: 0 0 0 ;
+}
+
+.introtxt {
+	background-color: #00deb7; 
+	padding: 1rem; 
+	padding-bottom: 10%;
+
+}
+
+.halfitem {
+	max-width: 100%;
+	float: left;
+}
+
+.vertical {
+	max-width: 50%;
+	margin: 0;
+	display: block;
+	float: left;
+}
+
+.vertical img {
+	width: 100%;
+}
+
+.col2{
+	float: left; 
+	width: 50%;
+	
+}
+
+.col2 figure {
+	max-width: 50%;
+	float: left;
+}
+
+ img {
+ 	max-width: 100%; 
+ 	display: block; 
+ }

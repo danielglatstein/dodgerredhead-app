@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <header id="app_head">
-		<h1 id="logo"> Danny G </h1>
+		<h1 id="logo"> <%= link_to 'Danny G', root_path %> </h1>
 		<nav id="nav_bar">
 			<ul>
 				<li><%= link_to 'Salsa', salsa_path %></li>
@@ -30,6 +30,7 @@
 </header>
 <body>
 
+<%= yield :index %>
 <%= yield :salsa %>
 <%= yield :zara %>
 <%= yield :artwork %>
