@@ -37,8 +37,13 @@ a {
 }
 
 
-
-
+.title {
+	width: 100%;
+	padding: 10px 20px 0px 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 0 auto 30px;
+}
 
 h4 {
 	font-size: 17px;

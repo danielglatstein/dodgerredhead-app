@@ -1,21 +1,101 @@
 <% content_for :artwork do %>
   <%= stylesheet_link_tag 'artworkstyle' %>
 
-<% @video.each do |video| %>
-	<div>
-		<h2> <%= link_to video.title, video %> </h2>
-	</div>
-<% end %>
+		<div class="nav_bar">
+			<ul>
+				<li>
+					<a href="#photography"> PHOTOGRAPHY </a>
+				</li>
+				<li>
+					<a href="#video"> VIDEO </a>
+				</li>
+				<li> 
+					<a href="#painting"> PAINTING </a> 
+				</li>
+			</ul>
+		</div>
 
-<% @photography.each do |photo| %>
-	<div>
-		<h2> <%= link_to photo.title, photo %> </h2>
-	</div>
-<% end %>
+	<section class="single-element">
+		<% @photography.each do |photo| %>
 
-<% @painting.each do |painting| %>
-	<div>
-		<h2> <%= link_to painting.title, painting %> </h2>
-	</div>
-<% end %>
+		<header>
+			<a name="photography"></a>
+			<h2 class="sec_name">Photography</h2>
+			<h3>THIS IS AN INTRO TO DANNYS WORK IN Photography</h3>
+		</header>	
+
+			<div class="clearall"></div>
+
+			<article class="artwork clearfix">
+					<ul class='salsa'>
+						<a href="verde.html" target="_blank">
+							<li>
+								<div class='img'>
+									<%= image_tag photo.image_url(:thumb).to_s %>
+										<div class='triangle'></div>
+								</div>
+								<h4 class="title"> <%= link_to photo.title, photo %> </h4>
+							</li>
+						</a>
+			</article>
+
+		<% end %>
+	</section>
+
+	<section id="video" class="single-element">
+
+		<% @video.each do |video| %>
+
+		<header>
+			<a name="video"></a>
+			<h2 class="sec_name">Video</h2>
+			<h3>THIS IS a link to painting section</h3>
+		</header>
+
+		<div class="clearall"></div>
+		
+		<article class="artwork clearfix">
+				<ul class='salsa'>
+					<a href="verde.html" target="_blank">
+						<li>
+							<div class='img'>
+								<%= image_tag video.image_url(:thumb).to_s %> 
+									<div class='triangle'></div>
+							</div>
+							<h4 class="title"><%= link_to video.title, video %></h4>
+						</li>
+					</a>
+
+		</article>
+
+		<% end %>
+	</section>
+
+	<section id="video" class="single-element">
+		<% @painting.each do |painting| %>
+
+		<header>
+			<a name="painting"></a>
+			<h2 class="sec_name">Painting</h2>
+			<h3>THIS IS a link to painting section</h3>
+		</header>
+
+		<div class="clearall"></div>
+		
+		<article class="artwork clearfix">
+				<ul class='salsa'>
+					<a href="verde.html" target="_blank">
+						<li>
+							<div class='img'>
+								<%= image_tag painting.image_url(:thumb).to_s %>
+									<div class='triangle'></div>
+							</div>
+							<h4 class="title"> <%= link_to painting.title, painting %> </h4>
+						</li>
+					</a>
+		</article>
+
+		<% end %>
+	</section>
+
 <% end %>
