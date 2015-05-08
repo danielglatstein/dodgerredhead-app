@@ -36,8 +36,6 @@
 				
 			<section class="single-element">
 
-				<% @trip.each do |trip| %>
-
 				<header>
 					<h2 id="what" class="sec_name">What Is Zara Aina?</h2>
 					<h3>Zara Aina is a Malagasy phrase that means ‘Share Life’. Broadway actors (and my professors at NYU Tisch School of the Arts) Lucas Caleb Rooney and Bryce Pinkham founded Zara Aina to help at-risk children expand their capacity for achievement through theatrical performance and storytelling. Established in 2012 with headquarters in New York, USA and Antananarivo, Madagascar, Zara Aina is a not-for-profit organization working with partners to develop sustainable programs that empower and change lives. <br><br>Zara Aina confronts the lack of educational opportunities facing children in Madagascar by using theatrical storytelling and performance to enable at-risk children to recognize their potential. We engage at-risk Malagasy children ages 10-14 years old who are prone to panhandling and homelessness. We create programming that addresses critical needs in the community such as communication and social skills.<br><br>At the heart of Zara Aina is the transformative power of storytelling. We believe that access to theater activities creates confident learners who are better prepared to participate actively in their education, community and social lives. From thinking creatively to collaborating with others, theatrical storytelling and performance can profoundly motivate children to achieve more and invest in their sense of possibility.<br><br>I have been a volunteer staff member since Zara Aina’s inception in 2012. I have helped to create Zara Aina's programming, lead fundraising drives, applied for 501C3 tax exemption, and traveled to Madagascar as a volunteer teacher in August, 2014. 
@@ -48,6 +46,7 @@
 				
 				<article class="artwork clearfix">
 					<ul class='salsa'>
+						<% @trip.each do |trip| %>
 						<a href="#">
 							<li>
 								<div class='img'>
@@ -116,7 +115,7 @@
 			</section>
 			
 			<section class="single-element">
-				<% @andavabatu.each do |andav| %>
+				
 	
 
 				<header>
@@ -129,6 +128,7 @@
 
 				<article class="artwork clearfix">
 					<ul class='salsa'>
+						<% @andavabatu.each do |andav| %>
 						<a href="#">
 							<li>
 								<div class='img'>
@@ -138,15 +138,16 @@
 								<h4 class = 'title'> <%= link_to andav.title, andav %> </h4>
 							</li>
 						</a>
+						<% end %>
 					</ul>
 				</article>
 
-				<% end %>
+				
 			</section>
 
 
 			<section class="single-element">
-				<% @ranamofana.each do |rana| %>
+				
 
 				<header>
 					<h2 id="rana" class="sec_name">Ranamofana</h2>
@@ -158,6 +159,7 @@
 				
 				<article class="artwork clearfix">
 					<ul class='salsa'>
+						<% @ranamofana.each do |rana| %>
 						<a href="#">
 							<li>
 								<div class='img'>
@@ -167,13 +169,13 @@
 								<h4 class = 'title'> <%= link_to rana.title, rana %> </h4>
 							</li>
 						</a>
+						<% end %>
 					</ul>
 				</article>
-				<% end %>
+				
 			</section>
 
 			<section class="single-element">
-			<% @morandava.each do |moran| %>
 	
 				<header>
 					<h2 id="moran" class="sec_name">Morandava</h2>
@@ -185,6 +187,7 @@
 
 				<article class="artwork clearfix">
 					<ul class='salsa'>
+						<% @morandava.each do |moran| %>
 						<a href="#">
 							<li>
 								<div class='img'>
@@ -194,14 +197,14 @@
 								<h4 class = 'title'> <%= link_to moran.title, moran %> </h4>
 							</li>
 						</a>
+						<% end %>
 					</ul>
 				</article>
-				<% end %>
+				
 
 			</section>
 
 			<section class="single-element">
-				<% @crocodiles.each do |croc| %>
 
 
 				<header>
@@ -213,6 +216,7 @@
 				
 					<article class="artwork clearfix">
 						<ul class='salsa'>
+							<% @crocodiles.each do |croc| %>
 							<a href="#">
 								<li>
 									<div class='img'>
@@ -222,12 +226,10 @@
 									<h4 class = 'title'> <%= link_to croc.title, croc %> </h4>
 								</li>
 							</a>
+							<% end %>
 						</ul>
 					</article>
 					
-
-				<% end %>
-
 			</section>
 	
 		</div>

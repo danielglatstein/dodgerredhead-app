@@ -16,8 +16,6 @@
 		</div>
 
 	<section class="single-element">
-		<% @photography.each do |photo| %>
-
 		<header>
 			<a name="photography"></a>
 			<h2 class="sec_name">Photography</h2>
@@ -28,6 +26,7 @@
 
 			<article class="artwork clearfix">
 					<ul class='salsa'>
+						<% @photography.each do |photo| %>
 						<a href="verde.html" target="_blank">
 							<li>
 								<div class='img'>
@@ -37,15 +36,12 @@
 								<h4 class="title"> <%= link_to photo.title, photo %> </h4>
 							</li>
 						</a>
+						<% end %>
+					</ul>
 			</article>
-
-		<% end %>
 	</section>
 
-	<section id="video" class="single-element">
-
-		<% @video.each do |video| %>
-
+	<section class="single-element">
 		<header>
 			<a name="video"></a>
 			<h2 class="sec_name">Video</h2>
@@ -56,6 +52,7 @@
 		
 		<article class="artwork clearfix">
 				<ul class='salsa'>
+					<% @video.each do |video| %>
 					<a href="verde.html" target="_blank">
 						<li>
 							<div class='img'>
@@ -65,15 +62,12 @@
 							<h4 class="title"><%= link_to video.title, video %></h4>
 						</li>
 					</a>
-
+					<% end %>
+				</ul>
 		</article>
-
-		<% end %>
 	</section>
 
-	<section id="video" class="single-element">
-		<% @painting.each do |painting| %>
-
+	<section class="single-element">
 		<header>
 			<a name="painting"></a>
 			<h2 class="sec_name">Painting</h2>
@@ -84,6 +78,7 @@
 		
 		<article class="artwork clearfix">
 				<ul class='salsa'>
+					<% @painting.each do |painting| %>
 					<a href="verde.html" target="_blank">
 						<li>
 							<div class='img'>
@@ -93,9 +88,9 @@
 							<h4 class="title"> <%= link_to painting.title, painting %> </h4>
 						</li>
 					</a>
+					<% end %>
+				</ul>
 		</article>
-
-		<% end %>
 	</section>
 
 <% end %>
