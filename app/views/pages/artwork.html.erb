@@ -77,12 +77,13 @@
 		<div class="clearall"></div>
 		
 		<article class="artwork clearfix">
+			<%= @painting.in_groups_of(3, false) do |row_painting| %>
 				<ul class='salsa'>
-					<% @painting.each do |painting| %>
+					<%row_painting.each do |painting| %>
 					<a href="verde.html" target="_blank">
 						<li>
 							<div class='img'>
-								<%= image_tag painting.image_url(:thumb).to_s %>
+								<%= image_tag painting.image_url.to_s %>
 									<div class='triangle'></div>
 							</div>
 							<h4 class="title"> <%= link_to painting.title, painting %> </h4>
@@ -90,6 +91,7 @@
 					</a>
 					<% end %>
 				</ul>
+			<% end %>
 		</article>
 	</section>
 
