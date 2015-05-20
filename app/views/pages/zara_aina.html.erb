@@ -45,18 +45,20 @@
 			<div class="clearall"></div>
 			
 			<article class="artwork clearfix">
-				<ul class='salsa'>
-					<% @trip.each do |trip| %>
-					<a href="#">
-						<li>
-							<div class='img'>
-								<%= image_tag trip.image_url(:thumb).to_s %>
-								<div class='triangle'></div>
-							</div>
-							<h4 class = 'title'> <%= link_to trip.title, trip %> </h4>
-						</li>
-					</a>
-				</ul>
+				<%= @trip.in_groups_of(3, false) do |row_trip| %>
+					<ul class='salsa'>
+						<% row_trip.each do |trip| %>
+						<a href="#">
+							<li>
+								<div class='img'>
+									<%= image_tag trip.image_url(:thumb).to_s %>
+									<div class='triangle'></div>
+								</div>
+								<h4 class = 'title'> <%= link_to trip.title, trip %> </h4>
+							</li>
+						</a>
+						<% end %>
+					</ul>
 			</article>
 		</section>
 
@@ -73,32 +75,7 @@
 
 			<article class="artwork clearfix">
 				<ul class='salsa'>
-					<a href="#">
-						<li>
-							<div class='img'>
-								<%= image_tag trip.image_url(:thumb).to_s %>
-								<div class='triangle'></div>
-							</div>
-							<h4 class = 'title'> <%= link_to trip.title, trip %> </h4>
-						</li>
-					</a>
-				</ul>
-			</article>
-		</section>
-
-
-		<section class="single-element">
-
-			<header>
-				<h2 id="trip" class="sec_name">2014 Trip</h2>
-				<h3>Each year Zara Aina holds a month long program that works with at-risk Malagasy children ages 10-14 years old in performance skills, creating original dramatic work, theater vocabulary and literacy with the use of Malagasy folktales and theater. The goal is to use theatrical storytelling and performance as an opportunity for these children to develop self-worth, discipline, teamwork, and invest in one’s value of imagination.<br><br>In 2014 I traveled with Zara Aina to Antananarivo, Madagscar to volunteer as a teacher for Zara Aina. The US volunteers worked non-stop with 30 bright little stars to create a performance celebrating the 30th anniversary of UNICEF in Madagascar. The kids CRUSHED IT and toured the show all over the capital. Everyone who saw them to recognized the transformational power of storytelling and performance.<br><br>As a teacher in Zara Aina my primary goals were to address each child’s emotional, educational and developmental needs; create a sale and stable environment to explore ideas, improvise and develop self-worth; and to encourage taking full responsibility of one’s creative process.<br><br>The month long program culminated in a tour to several impoverished communities around Madagascar, where Zara Aina’s American volunteers have a chance to expand their outreach, conduct workshops, distribute school supplies, and perform their material.  This year Zara Aina returned to conduct workshops in Andavabatu and Ranamofana, while also partnering with the Vohary Project in Morandava.. Each community has their own distinct personality.<br><br> Nearly with all the kids I worked with advances in discipline, attention span, and self-confidence were apparent. Some kids, once soft-spoken or shy, became increasingly louder and more articulate both in using their voices and bodies on stage; they began to take risks, present their own ideas about how their show should look, feel, and sound, and challenged themselves to create more expressively. They became accustomed to structured rehearsals and warm-ups.<br><br>	At the end of the program one of the boys, Andreas, expressed to us that in the beginning he felt small and as if he had nothing to offer, but as a result of the time spent working with the company he felt “big” and recognized the gifts that he possesses. Moreover, there was an eagerness to share those gifts with others.<br><br> The most valuable thing I took away from my time in Madagascar was that these children, some of whom didn’t even have a place to call home, learned to value themselves as unique gifts and assets to each other and to their communities. 
-				</h3>
-			</header>
-
-			<div class="clearall"></div>
-
-			<article class="artwork clearfix">
-				<ul class='salsa'>
+					<% row_trip.each do |trip| %>
 					<a href="#">
 						<li>
 							<div class='img'>
@@ -110,6 +87,35 @@
 					</a>
 					<% end %>
 				</ul>
+			</article>
+		</section>
+
+
+		<section class="single-element">
+
+			<header>
+				<h2 id="trip" class="sec_name">2014 Trip</h2>
+				<h3>Each year Zara Aina holds a month long program that works with at-risk Malagasy children ages 10-14 years old in performance skills, creating original dramatic work, theater vocabulary and literacy with the use of Malagasy folktales and theater. The goal is to use theatrical storytelling and performance as an opportunity for these children to develop self-worth, discipline, teamwork, and invest in one’s value of imagination.<br><br>In 2014 I traveled with Zara Aina to Antananarivo, Madagscar to volunteer as a teacher for Zara Aina. The US volunteers worked non-stop with 30 bright little stars to create a performance celebrating the 30th anniversary of UNICEF in Madagascar. The kids CRUSHED IT and toured the show all over the capital. Everyone who saw them to recognized the transformational power of storytelling and performance.<br><br>As a teacher in Zara Aina my primary goals were to address each child’s emotional, educational and developmental needs; create a safe and stable environment to explore ideas, improvise and develop self-worth; and to encourage taking full responsibility of one’s creative process.<br><br>The month long program culminated in a tour to several impoverished communities around Madagascar, where Zara Aina’s American volunteers have a chance to expand their outreach, conduct workshops, distribute school supplies, and perform their material.  This year Zara Aina returned to conduct workshops in Andavabatu and Ranamofana, while also partnering with the Vohary Project in Morandava.. Each community has their own distinct personality.<br><br> All the kids I worked with demonstrated advances in discipline, attention span, and self-confidence. Some kids, once soft-spoken or shy, became louder and more articulate both in using their voices and bodies on stage; they began to take risks, present their own ideas about how their show should look, feel, and sound, and challenged themselves to create more expressively. They became accustomed to structured rehearsals and warm-ups.<br><br>	At the end of the program one of the boys, Andreas, expressed to us that in the beginning he felt small and as if he had nothing to offer, but as a result of the time spent working with the company he felt “big” and recognized the gifts that he possesses. Moreover, there was an eagerness to share those gifts with others.<br><br> The most valuable thing I took away from my time in Madagascar was that these children, some of whom didn’t even have a place to call home, learned to value themselves as unique gifts and assets to each other and to their communities. 
+				</h3>
+			</header>
+
+			<div class="clearall"></div>
+
+			<article class="artwork clearfix">
+				<ul class='salsa'>
+					<% row_trip.each do |trip| %>
+					<a href="#">
+						<li>
+							<div class='img'>
+								<%= image_tag trip.image_url(:thumb).to_s %>
+								<div class='triangle'></div>
+							</div>
+							<h4 class = 'title'> <%= link_to trip.title, trip %> </h4>
+						</li>
+					</a>
+					<% end %>
+				</ul>
+			<% end %>
 			</article>
 
 			
@@ -121,26 +127,28 @@
 
 			<header>
 				<h2 id="andav" class="sec_name">Andavabatu</h2>
-				<h3>Andavabatu is a farming community on the center Plateau of Madagascar. There is no running water or electricity. The school has one teacher for roughly 200 kids, aged 4-12. There is no arts education. The progress I saw during our week with the community during our workshop was amazing. While some children on the first day were scared to participate in activites, by the last day they were jumping into the work and fully expressing themselves. Before leaving, Zara Aina helped to build 200 new desks for the school, along with providing the materials to fix leaks in the school house roof.
+				<h3>Andavabatu is a farming community on the center Plateau of Madagascar. There is no running water or electricity. The school has one teacher for roughly 200 kids, aged 4-12. There is no arts education. The progress I saw during our week with the community during our workshop was amazing. While some children on the first day were scared to participate in activites, by the last day they were jumping into the work and fully expressing themselves. Before leaving, Zara Aina helped to build 200 new desks for the school, provided the materials to fix leaks in the school house roof and donated enough food to store in order to feed the school children during the famine months.
 				</h3>
 			</header>
 
 			<div class="clearall"></div>
 
 			<article class="artwork clearfix">
-				<ul class='salsa'>
-					<% @andavabatu.each do |andav| %>
-					<a href="#">
-						<li>
-							<div class='img'>
-								<%= image_tag andav.image_url(:thumb).to_s %>
-								<div class='triangle'></div>
-							</div>
-							<h4 class = 'title'> <%= link_to andav.title, andav %> </h4>
-						</li>
-					</a>
-					<% end %>
-				</ul>
+				<%= @andavabatu.in_groups_of(3, false) do |row_andav| %>
+					<ul class='salsa'>
+						<% row_andav.each do |andav| %>
+						<a href="#">
+							<li>
+								<div class='img'>
+									<%= image_tag andav.image_url(:thumb).to_s %>
+									<div class='triangle'></div>
+								</div>
+								<h4 class = 'title'> <%= link_to andav.title, andav %> </h4>
+							</li>
+						</a>
+						<% end %>
+					</ul>
+				<% end %>
 			</article>
 
 			
@@ -159,19 +167,21 @@
 			<div class="clearall"></div>
 			
 			<article class="artwork clearfix">
-				<ul class='salsa'>
-					<% @ranamofana.each do |rana| %>
-					<a href="#">
-						<li>
-							<div class='img'>
-								<%= image_tag rana.image_url(:thumb).to_s %>
-								<div class='triangle'></div>
-							</div>
-							<h4 class = 'title'> <%= link_to rana.title, rana %> </h4>
-						</li>
-					</a>
-					<% end %>
-				</ul>
+				<%= @ranamofana.in_groups_of(3, false) do |row_rana| %>
+					<ul class='salsa'>
+						<% row_rana.each do |rana| %>
+						<a href="#">
+							<li>
+								<div class='img'>
+									<%= image_tag rana.image_url(:thumb).to_s %>
+									<div class='triangle'></div>
+								</div>
+								<h4 class = 'title'> <%= link_to rana.title, rana %> </h4>
+							</li>
+						</a>
+						<% end %>
+					</ul>
+				<% end %>
 			</article>
 			
 		</section>
@@ -187,19 +197,21 @@
 			<div class="clearall"></div>
 
 			<article class="artwork clearfix">
-				<ul class='salsa'>
-					<% @morandava.each do |moran| %>
-					<a href="#">
-						<li>
-							<div class='img'>
-								<%= image_tag moran.image_url(:thumb).to_s %>
-								<div class='triangle'></div>
-							</div>
-							<h4 class = 'title'> <%= link_to moran.title, moran %> </h4>
-						</li>
-					</a>
-					<% end %>
-				</ul>
+				<%= @morandava.in_groups_of(3, false) do |row_moran| %>
+					<ul class='salsa'>
+						<% row_moran.each do |moran| %>
+						<a href="#">
+							<li>
+								<div class='img'>
+									<%= image_tag moran.image_url(:thumb).to_s %>
+									<div class='triangle'></div>
+								</div>
+								<h4 class = 'title'> <%= link_to moran.title, moran %> </h4>
+							</li>
+						</a>
+						<% end %>
+					</ul>
+				<% end %>
 			</article>
 			
 

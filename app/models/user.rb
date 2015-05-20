@@ -2,5 +2,70 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [ :twitter, :facebook, :instagram, :gplus]
+
+
+  def apply_omniauth(omniauth)
+	  self.email = omniauth['user_info']['email'] if email.blank?
+	  authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+  end
+
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
+
+  def self.create_with_omniauth(auth)
+	  create! do |user|
+	    user.provider = auth["provider"]
+	    user.uid = auth["uid"]
+	    user.name = auth["info"]["name"]
+	   end
+   end
+
+  def password_required?
+	  (authentications.empty? || !password.blank?) && super
+  end
+  
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    if user
+      return user
+    else
+      registered_user = User.where(:email => auth.uid + "@twitter.com").first
+      if registered_user
+        return registered_user
+      else
+
+        user = User.create(name:auth.extra.raw_info.name,
+                            provider:auth.provider,
+                            uid:auth.uid,
+                            email:auth.uid+"@twitter.com",
+                            password:Devise.friendly_token[0,20],
+                          )
+      end
+
+    end
+  end
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    if user
+      return user
+    else
+      registered_user = User.where(:email => auth.info.email).first
+      if registered_user
+        return registered_user
+      else
+        user = User.create(name:auth.extra.raw_info.name,
+                            provider:auth.provider,
+                            uid:auth.uid,
+                            email:auth.info.email,
+                            password:Devise.friendly_token[0,20],
+                          )
+      end    end
+  end
 end

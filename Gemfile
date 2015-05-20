@@ -29,7 +29,16 @@ gem 'activeadmin', '~> 1.0.0.pre1'
 
 gem "carrierwave"
 
+gem "carrierwave-video"
+
 gem "rmagick"
+
+gem 'mailcatcher', '~> 0.6.1'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+gem 'omniauth-gplus', '~> 2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

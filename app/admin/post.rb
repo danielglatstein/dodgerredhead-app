@@ -9,7 +9,7 @@ ActiveAdmin.register Post do
   form :html => {multipart: true} do |f|
   	f.inputs "dodgerredhead posts" do
   	  f.label :title 
-  		f.text_field :title 
+  		f.text_field :title
   		f.label :body 
   		f.text_area :body
     	f.input :category, :as => :select, :collection => Post::VALID_CATEGORIES

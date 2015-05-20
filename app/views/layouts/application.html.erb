@@ -7,35 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
 	<header id="app_head">
 			<h1 id="logo"> <%= link_to 'Danny G', root_path %> </h1>
 			<nav id="nav_bar">
 				<ul>
-					<li><%= link_to 'Salsa', salsa_path %></li>
-					<li><%= link_to 'Zara Aina', zara_aina_path %></li>
-					<li><%= link_to 'Artwork', artwork_path %></li>
-					<li>  <% if user_signed_in? %> <br>
-	    			Signed in as <%= current_user.email %>
-	    			<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-	  					<% else %>
-	    			<%= link_to "Sign Up", new_user_registration_path %>/<%= link_to "Sign In", new_user_session_path %>
-	  				<% end %> </li>
+					<li>
+						<%= link_to 'Salsa', salsa_path %>
+					</li>
+					<li>
+						<%= link_to 'Zara Aina', zara_aina_path %>
+					</li>
+					<li>
+						<%= link_to 'Artwork', artwork_path %>
+					</li>
+					<li> 	
+						
+					</li>
 				</ul>
 			</nav>
 				<div id="social">
-					<a class="twit" target="_blank" href="#" title="twitter"> </a>
-					<a class="insta" target="_blank" href="#" title="instagram"> </a>
-					<a class="plus" target="_blank" href="#" title="google_plus"> </a>
-					<a class="facebook" target="_blank" href="#" title="facebook"> </a>
+					<% if user_signed_in? %>
+							Signed in as <%= current_user.name %>. Not you?
+							<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
+						<% else %>
+							<a class="twit" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="twitter"> </a>
+							<a class="insta" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="instagram"> </a>
+							<a class="plus" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="google_plus"> </a>
+							<a class="facebook" target="_blank" href="<%= user_omniauth_authorize_path(:facebook) %>" title="facebook"> </a>
+					<% end %>
 				</div>
 	</header>
 
 
-	<%= yield :index %>
-	<%= yield :salsa %>
-	<%= yield :zara %>
-	<%= yield :artwork %>
 	<%= yield %>
 
 
