@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
 
   def apply_omniauth(omniauth)
-	  self.email = omniauth['user_info']['email'] if email.blank?
-	  authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+    self.email = omniauth['user_info']['email'] if email.blank?
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end
 
   def update_with_password(params, *options)
@@ -19,15 +19,15 @@ class User < ActiveRecord::Base
   end
 
   def self.create_with_omniauth(auth)
-	  create! do |user|
-	    user.provider = auth["provider"]
-	    user.uid = auth["uid"]
-	    user.name = auth["info"]["name"]
-	   end
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"]
+     end
    end
 
   def password_required?
-	  (authentications.empty? || !password.blank?) && super
+    (authentications.empty? || !password.blank?) && super
   end
   
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
@@ -68,4 +68,7 @@ class User < ActiveRecord::Base
                           )
       end    end
   end
+
+  has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
+  devise :omniauthable, :omniauthable
 end

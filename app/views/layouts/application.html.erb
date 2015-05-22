@@ -32,9 +32,9 @@
 							<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
 						<% else %>
 							<a class="twit" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="twitter"> </a>
-							<a class="insta" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="instagram"> </a>
-							<a class="plus" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="google_plus"> </a>
-							<a class="facebook" target="_blank" href="<%= user_omniauth_authorize_path(:facebook) %>" title="facebook"> </a>
+							<a class="insta" target="_blank" href="<%= user_omniauth_authorize_path("twitter") %>" title="instagram"> </a>
+							<a class="plus" target="_blank" href="<%= user_omniauth_authorize_path(:gplus) %>" title="google_plus"> </a>
+							<a class="facebook" target="_blank" href="<%= user_omniauth_authorize_path("facebook") %>" title="facebook"> </a>
 					<% end %>
 				</div>
 	</header>
