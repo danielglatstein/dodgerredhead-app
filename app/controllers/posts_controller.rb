@@ -15,8 +15,8 @@ class PostsController < ApplicationController
 		else 
 			render 'new'
 		end
+
 		
-		@user = User.new(params[:user])
 	end
 
 	def show
@@ -41,8 +41,6 @@ class PostsController < ApplicationController
 		@posts = Post.find(params[:id ])
 		@posts.destroy 
 			redirect_to posts_path
-		self.current_user = nil
-  		redirect_to root_url, notice: "Signed out!"
 	end
 
 	private
