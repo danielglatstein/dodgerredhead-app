@@ -1,12 +1,16 @@
 class Post < ActiveRecord::Base
 
  	mount_uploader :image, ImageUploader
+ 	mount_uploader :video, VideoUploader
  	
 
 	validates :title, presence:true, length: {minimum: 5}
 	validates :body, presence:true
 	validates :category, presence:true
-	validates :image, presence:true
+	
+	def set_success(format, opts)
+    	self.success = true
+  	end
 
 
 

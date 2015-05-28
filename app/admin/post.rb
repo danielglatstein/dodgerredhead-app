@@ -19,6 +19,8 @@ ActiveAdmin.register Post do
     	f.input :category, :as => :select, :collection => Post::VALID_CATEGORIES
       f.label :image 
       f.file_field :image
+      f.label :video 
+      f.file_field :video
     	f.submit 
     end
   end

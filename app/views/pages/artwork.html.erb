@@ -27,7 +27,7 @@
 				<%= @photography.in_groups_of(3, false) do |row_photography| %>
 					<ul class='salsa'>
 						<% row_photography.each do |photo| %>
-						<a href="verde.html" target="_blank">
+						<a href=<%= post_path photo %> >
 							<li>
 								<div class='img'>
 									<%= image_tag photo.image_url(:thumb).to_s %>
@@ -55,7 +55,7 @@
 			<%= @video.in_groups_of(3, false) do |row_video| %>
 				<ul class='salsa'>
 					<% row_video.each do |video| %>
-					<a href="verde.html" target="_blank">
+					<a href=<%= post_path video %>>
 						<li>
 							<div class='img'>
 								<%= image_tag video.image_url(:thumb).to_s %> 
@@ -83,7 +83,7 @@
 			<%= @painting.in_groups_of(3, false) do |row_painting| %>
 				<ul class='salsa'>
 					<%row_painting.each do |painting| %>
-					<a href="verde.html" target="_blank">
+					<a href=<%= post_path painting %>>
 						<li>
 							<div class='img'>
 								<%= image_tag painting.image_url(:thumb).to_s %>

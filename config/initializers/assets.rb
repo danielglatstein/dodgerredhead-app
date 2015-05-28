@@ -6,6 +6,7 @@ Rails.application.config.assets.precompile += %w( salsastyle.css )
 Rails.application.config.assets.precompile += %w( zarastyle.css )
 Rails.application.config.assets.precompile += %w( artworkstyle.css )
 Rails.application.config.assets.precompile += %w( indexstyle.css )
+Rails.application.config.assets.precompile += %w( post_page_style.css )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

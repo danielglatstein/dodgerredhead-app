@@ -1,15 +1,20 @@
-<h1 class="title">
-	<%= @posts.title %>
-</h1>
+  <%= stylesheet_link_tag 'post_page_style' %>
+<body background= "<%= asset_path( 'DSC_1120.JPG' ) %>" >
+<div id="container">
+	<div class="container-overflow">
+		<div class="container-wrap">
+			<h2 class="sec_name">	<%= @posts.title %> </h2>
 
-<p class="date">
-	submitted <%= time_ago_in_words(@posts.created_at) %> ago
-	<% if user_signed_in?%>
-	| <%= link_to 'Edit', edit_post_path(@posts) %>
-	| <%= link_to 'Delete', post_path(@posts), method: :delete, data: { confirm: 'Are you Sure?' } %>
-	<% end %>
-</p>
+			<h3 class="sec_desc"> <%= @posts.body %> </h3>
 
-<body class="body">
-	<p> <%= @posts.body %> </p>
+			<div class="salsa_pic">
+				<p> <%= image_tag @posts.image_url(:thumb).to_s %> </p>
+			</div>
+
+			<p class="date">
+				submitted <%= time_ago_in_words(@posts.created_at) %> ago
+			</p>
+		</div>
+	</div>
+</div>
 </body>

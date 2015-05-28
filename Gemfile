@@ -30,6 +30,7 @@ gem 'activeadmin', '~> 1.0.0.pre1'
 gem "carrierwave"
 
 gem "carrierwave-video"
+gem 'streamio-ffmpeg', '~> 1.0.0'
 
 gem "rmagick"
 
