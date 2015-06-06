@@ -41,7 +41,6 @@ gem "rmagick"
 
 gem 'domp', '~> 0.0.7'
 
-gem 'mailcatcher', '~> 0.6.1'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
