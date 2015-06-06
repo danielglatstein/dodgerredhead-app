@@ -232,7 +232,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   require 'omniauth-instagram'
   config.omniauth :instagram, "c24bd169ff144ceaaa697b2e08a5f4f9", "bd8105f645404860bd8671884a2c7090"
   config.omniauth :facebook, "832723670140928", "5ace063c3b13c1dcd3f1a71bf32ce5df"
