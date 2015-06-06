@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526211108) do
+ActiveRecord::Schema.define(version: 20150530171723) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -54,15 +54,16 @@ ActiveRecord::Schema.define(version: 20150526211108) do
 
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers"
 
-  create_table "identities", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "quantity_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+  add_index "ingredients", ["quantity_id"], name: "index_ingredients_on_quantity_id"
+  add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -71,7 +72,30 @@ ActiveRecord::Schema.define(version: 20150526211108) do
     t.datetime "updated_at", null: false
     t.string   "category"
     t.string   "image"
+    t.string   "type"
   end
+
+  create_table "quantities", force: :cascade do |t|
+    t.string   "amount"
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "quantities", ["ingredient_id"], name: "index_quantities_on_ingredient_id"
+  add_index "quantities", ["recipe_id"], name: "index_quantities_on_recipe_id"
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "instructions"
+    t.integer  "quantity_id"
+    t.integer  "ingredient_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "recipes", ["ingredient_id"], name: "index_recipes_on_ingredient_id"
+  add_index "recipes", ["quantity_id"], name: "index_recipes_on_quantity_id"
 
   create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
