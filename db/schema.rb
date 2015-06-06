@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530171723) do
+ActiveRecord::Schema.define(version: 20150529004934) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -24,9 +27,9 @@ ActiveRecord::Schema.define(version: 20150530171723) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150530171723) do
     t.datetime "updated_at"
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "authentication_providers", force: :cascade do |t|
     t.string   "name"
@@ -52,18 +55,7 @@ ActiveRecord::Schema.define(version: 20150530171723) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers"
-
-  create_table "ingredients", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "quantity_id"
-    t.integer  "recipe_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "ingredients", ["quantity_id"], name: "index_ingredients_on_quantity_id"
-  add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id"
+  add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -74,28 +66,6 @@ ActiveRecord::Schema.define(version: 20150530171723) do
     t.string   "image"
     t.string   "type"
   end
-
-  create_table "quantities", force: :cascade do |t|
-    t.string   "amount"
-    t.integer  "recipe_id"
-    t.integer  "ingredient_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "quantities", ["ingredient_id"], name: "index_quantities_on_ingredient_id"
-  add_index "quantities", ["recipe_id"], name: "index_quantities_on_recipe_id"
-
-  create_table "recipes", force: :cascade do |t|
-    t.string   "instructions"
-    t.integer  "quantity_id"
-    t.integer  "ingredient_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "recipes", ["ingredient_id"], name: "index_recipes_on_ingredient_id"
-  add_index "recipes", ["quantity_id"], name: "index_recipes_on_quantity_id"
 
   create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
@@ -108,8 +78,8 @@ ActiveRecord::Schema.define(version: 20150530171723) do
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id"
-  add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id"
+  add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
+  add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -129,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150530171723) do
     t.string   "uid"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
