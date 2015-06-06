@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+/* line 7, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+#app_head {
+  background: #8c96a0;
+}
+
+/* line 11, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 21, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* ID Selector (apply to only one unique element per page) */
+/* Descendent Selector */
+/* line 30, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+h1#logo {
+  /* selects only <h1> inside the element with id="logo" */
+  font-family: 'Pacifico';
+  padding: 25px 55px 0 55px;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+  background: #000;
+  color: white;
+}
+
+/* line 42, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+#nav_bar {
+  display: inline-block;
+  max-width: 30rem;
+  width: 100%;
+}
+
+/* line 52, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+#nav_bar ul li {
+  font-family: Karla, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 0;
+  border: none;
+  text-align: left;
+  padding: 0 25px;
+}
+
+/* line 63, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+#social {
+  float: right;
+  display: inline-block;
+  padding: 13px 4px 0 2px;
+  height: 48px;
+  z-index: 1;
+}
+
+/* line 71, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.twit, a.insta, a.facebook, a.plus {
+  float: right;
+  white-space: nowrap;
+  width: 48px;
+  height: 48px;
+  margin: 5px;
+  overflow: hidden;
+  background-image: url(/assets/media.png);
+  margin-right: auto;
+}
+
+/* line 83, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.facebook {
+  background-position: -53px 0px;
+}
+
+/* line 84, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.facebook:hover {
+  background-position: 0px 0px;
+}
+
+/* line 85, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.facebook:active {
+  background-position: -53px 0px;
+}
+
+/* line 87, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.twit {
+  background-position: -371px 0px;
+}
+
+/* line 88, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.twit:hover {
+  background-position: -318px 0px;
+}
+
+/* line 89, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.twit:active {
+  background-position: -371px 0px;
+}
+
+/* line 91, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.plus {
+  background-position: -106px 0px;
+}
+
+/* line 92, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.plus:hover {
+  background-position: -265px 0px;
+}
+
+/* line 93, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.plus:active {
+  background-position: -106px 0px;
+}
+
+/* line 95, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.insta {
+  background-position: -212px 0px;
+}
+
+/* line 96, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.insta:hover {
+  background-position: -159px 0px;
+}
+
+/* line 97, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a.insta:active {
+  background-position: -212px 0px;
+}
+
+/* line 101, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a {
+  text-decoration: none;
+  font-size: .9em;
+}
+
+/* line 106, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 111, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 116, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+/* line 121, /Users/danielglatstein/dodgerredhead/app/assets/stylesheets/application.css.scss */
+a:active {
+  text-decoration: underline;
+  color: lime;
+}

@@ -75,7 +75,7 @@ a.twit, a.insta, a.facebook, a.plus {
 	height: 48px;
 	margin:5px;
 	overflow: hidden; 
-	background-image: asset-url('media.png');
+	background-image: url(asset-path('media.png'));
 	margin-right: auto;
 }
 
