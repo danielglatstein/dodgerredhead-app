@@ -2,10 +2,6 @@
 
 one:
   amount: MyString
-  recipe_id: 
-  ingredient_id: 
 
 two:
   amount: MyString
-  recipe_id: 
-  ingredient_id: 

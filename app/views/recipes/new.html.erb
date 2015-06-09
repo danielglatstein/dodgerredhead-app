@@ -13,17 +13,17 @@
         <%= f.label :instructions, "Instructions for this recipe", class: "control-label" %>
         <div class="controls"><%= f.text_area :instructions, rows: 10 %></div>
       </li>
-    </ol> 
-  </fieldset> 
-  
-  <fieldset id="recipe-ingredients"> 
-    <ol> 
-      <%= f.fields_for :quantities do |quantity| %> 
-        <%= render 'quantity_fields', f: quantity %> 
-      <% end %> 
-    </ol> 
-    <%= link_to_add_association 'add ingredient', f, :quantities, 'data-association-insertion-node' => "#recipe-ingredients ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new {|quantity| quantity.build_ingredient; quantity } %> 
-  </fieldset> 
-  
-  <%= f.submit %> 
+    </ol>
+  </fieldset>
+
+  <fieldset id="recipe-ingredients">
+    <ol>
+      <%= f.fields_for :quantities do |quantity| %>
+        <%= render 'quantity_fields', f: quantity %>
+      <% end %>
+    </ol>
+    <%= link_to_add_association 'add ingredient', f, :quantities, 'data-association-insertion-node' => "#recipe-ingredients ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new {|quantity| quantity.build_ingredient; quantity } %>
+  </fieldset>
+
+  <%= f.submit %>
 <% end %>

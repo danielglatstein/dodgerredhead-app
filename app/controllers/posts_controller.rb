@@ -29,7 +29,6 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id ])
-
 		if @post.update(params[:post].permit(:title, :body, :category, :image, :video))
 			redirect_to @post
 		else
