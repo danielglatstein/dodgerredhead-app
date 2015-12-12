@@ -12,31 +12,19 @@
 			<h1 id="logo"> <%= link_to 'Danny G', root_path %> </h1>
 			<nav id="nav_bar">
 				<ul>
+					<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MY APPLICATIONS<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://d-atta-boy.herokuapp.com/directory">D-Atta Boy</a></li>
+                    <li><a href="https://get-cookin.herokuapp.com/">GetCookin</a></li>
+                  </ul>
+                </li>
+              <li>
 					<li>
-						<%= link_to 'Salsa', salsa_path %>
-					</li>
-					<li>
-						<%= link_to 'Zara Aina', zara_aina_path %>
-					</li>
-					<li>
-						<%= link_to 'Artwork', artwork_path %>
-					</li>
-					<li> 	
-						
+						<a href="danielglatstein.github.io">MY BLOG</a>
 					</li>
 				</ul>
 			</nav>
-				<div id="social">
-					<% if user_signed_in? %>
-							Signed in as <%= current_user.name %>. Not you?
-							<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
-						<% else %>
-							<a class="twit" target="_blank" href="<%= user_omniauth_authorize_path(:twitter) %>" title="twitter"> </a>
-							<a class="insta" target="_blank" href="<%= user_omniauth_authorize_path(:instagram) %>" title="instagram"> </a>
-							<a class="plus" target="_blank" href="<%= user_omniauth_authorize_path(:gplus) %>" title="google_plus"> </a>
-							<a class="facebook" target="_blank" href="<%= user_omniauth_authorize_path(:facebook) %>" title="facebook"> </a>
-					<% end %>
-				</div>
 	</header>
 
 

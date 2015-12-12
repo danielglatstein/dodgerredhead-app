@@ -1,124 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
-@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
-
-
-
-#app_head {
-	background: #8c96a0;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	border: 0; 
-	box-sizing: border-box; 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-
-.wrapper {
-	width: 960px; 
-	margin: 0 auto; 
-}
-
-/* ID Selector (apply to only one unique element per page) */
-
-/* Descendent Selector */
-
-h1#logo { /* selects only <h1> inside the element with id="logo" */
-	font-family: 'Pacifico';
-	padding: 25px 55px 0 55px;
-	margin: 0;
-	padding-top: 20px;
-	padding-bottom: 20px; 
-	display: inline-block;
-	background: #000; 
-	color: white;
-}
-
-
-#nav_bar { 
-	display: inline-block;
-	max-width: 30rem;
-	width: 100%;
-	
-}
-
-
-
-
-#nav_bar ul li { 
-	font-family: Karla, Helvetica, sans-serif;
-	font-size: 0.9rem;  
-	display: inline-block;
-	margin: 0; 
-	border: none;
-	text-align: left;
-	padding: 0 25px; 
-
-}
-
-#social {
-	float:right;
-	display: inline-block;
-	padding: 13px 4px 0 2px; 
-	height: 48px;
-	z-index: 1;
-}
-
-a.twit, a.insta, a.facebook, a.plus {
-	float: right; 
-	white-space: nowrap;
-	width: 48px;
-	height: 48px;
-	margin:5px;
-	overflow: hidden; 
-	background-image: url(asset-path('media.png'));
-	margin-right: auto;
-}
-
-
-a.facebook {background-position: -53px 0px;}
-a.facebook:hover {background-position: 0px 0px}
-a.facebook:active {background-position: -53px 0px;}
-
-a.twit {background-position: -371px 0px}
-a.twit:hover {background-position: -318px 0px}
-a.twit:active {background-position: -371px 0px}
-
-a.plus {background-position: -106px 0px}
-a.plus:hover {background-position: -265px 0px}
-a.plus:active {background-position: -106px 0px}
-
-a.insta {background-position: -212px 0px; }
-a.insta:hover {background-position: -159px 0px}
-a.insta:active {background-position: -212px 0px}
-
-
-
-a {
-	text-decoration: none; 
-	font-size: .9em;
-}
-
-a:link {
-    text-decoration: none;
-    color: #fff; 
-}
-
-a:visited {
-    text-decoration: none;
-    color: #fff; 
-}
-
-a:hover {
-    text-decoration: underline;
-    color: red;
-}
-
-a:active {
-    text-decoration: underline;
-    color: lime; 
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_extra.scss
+ *= require font-awesome
+ */

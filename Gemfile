@@ -6,9 +6,10 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
-
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "font-awesome-rails"
 
 
 gem 'sass-rails', '~> 5.0'
@@ -31,15 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.1'
 
 gem 'activeadmin', '~> 1.0.0.pre1'
-
-gem "carrierwave"
-
-gem "carrierwave-video"
-gem 'streamio-ffmpeg', '~> 1.0.0'
-
-gem "rmagick"
-
-gem 'domp', '~> 0.0.7'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
